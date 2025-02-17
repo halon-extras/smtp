@@ -18,7 +18,7 @@ class SMTPClient
 	{
 		$this->socket = Socket(Socket::AF($this->address), "SOCK_STREAM");
 		if (!$this->socket->settimeout($this->timeout)) return false;
-		if (!$this->socket->connect($this->address, $this->port)) return $smtpd->__set_error();
+		if (!$this->socket->connect($this->address, $this->port)) return $this->__set_error();
 		if (!$this->command(none, 220)) return false;
 		return true;
 	}
